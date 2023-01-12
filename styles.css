@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'New Edge Soft Power';
+    src: url('assets/newedgesoftpower4-lightrounded-webfont.woff2') format('woff2'),
+         url('assets/newedgesoftpower4-lightrounded-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --primary-color: rgb(255, 60, 0);
+    --grid-gap: 0px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "New Edge Soft Power", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4vw;
+    font-weight: 500;
+    letter-spacing: -0.075rem;
+    color: var(--primary-color);
+    background: #ffffff;
+}
+
+.container {  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--grid-gap);
+    grid-auto-flow: row;
+    grid-template-areas:
+      "image-1 image-2"
+      "image-3 image-4";
+    height: calc(100vh - calc(var(--grid-gap) * 2));
+    padding: var(--grid-gap);
+}
+
+.imageBox {
+    background-size: cover;
+    background-position: center center;
+}
+  
+.image-1 {
+    grid-area: image-1;
+}
+  
+.image-2 {
+    grid-area: image-2;
+}
+
+.image-3 {
+    grid-area: image-3;
+}
+  
+.image-4 {
+    grid-area: image-4;
+}
+
+em {
+    font-style: italic;
+    color: inherit;
+}
+
+.infoBar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.infoBar__item {
+    position: relative;
+    padding: .4rem 2.2rem;
+    display: flex;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0.6em 0.3em #fff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    align-items: center;
+    margin: 0 1rem 1rem;
+    justify-content: space-around;
+}
+
+.infoBar__item.spacer {
+    opacity: 0;
+}
+
+.infoBar__item a {
+    color: inherit;
+    height: auto;
+    text-decoration: none;
+}
+
+.infoBar__item a:hover {
+    color: inherit;
+    height: auto;
+    text-decoration: underline;
+}
+
+@media (min-width: 800px) {
+    body {
+        font-size: 2vw;
+    }
+
+    .infoBar {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        bottom: 1rem;
+        width: 100%;
+        justify-content: right;
+    }
+
+    .infoBar__item {
+        margin: 0 1rem 0 0;
+    }
+}
